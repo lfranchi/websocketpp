@@ -1,4 +1,4 @@
-BOOST_PREFIX ?= /usr/local
+BOOST_PREFIX ?= /usr
 BOOST_LIB_PATH		?= $(BOOST_PREFIX)/lib
 BOOST_INCLUDE_PATH ?= $(BOOST_PREFIX)/include
 
@@ -8,7 +8,7 @@ CFLAGS = -Wall -O2 $(CPP11) -I$(BOOST_INCLUDE_PATH)
 LDFLAGS = -L$(BOOST_LIB_PATH)
 
 CXX		?= c++
-SHARED  ?= 0
+SHARED  ?= 1
 
 ifeq ($(SHARED), 1)
 	LDFLAGS := $(LDFLAGS) -lwebsocketpp

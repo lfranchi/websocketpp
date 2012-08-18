@@ -1,0 +1,20 @@
+project(websocketpp)
+cmake_minimum_required(VERSION 2.6)
+
+find_package(Boost 1.42.0 REQUIRED COMPONENTS)
+
+set(WEBSOCKETPP_MAJOR_VERSION 0)
+set(WEBSOCKETPP_MINOR_VERSION 2)
+set(WEBSOCKETPP_PATCH_VERSION 0)
+set(WEBSOCKETPP_VERSION "${WEBSOCKETPP_MAJOR_VERSION}.${WEBSOCKETPP_MINOR_VERSION}.${WEBSOCKETPP_PATCH_VERSION}" )
+set(WEBSOCKETPP_VERSION_SONAME "${WEBSOCKETPP_MAJOR_VERSION}.${WEBSOCKETPP_MINOR_VERSION}")
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+  IMMEDIATE @ONLY)
+
+add_custom_target(uninstall
+  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+  
+add_subdirectory(src)

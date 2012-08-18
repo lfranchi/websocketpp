@@ -2,7 +2,9 @@ BOOST_LIBS=boost_system boost_date_time boost_program_options boost_thread boost
 
 include ../common.mk
 
-LDFLAGS := $(LDFLAGS) -lpthread
+LDFLAGS := $(LDFLAGS) -lpthread -L/home/leo/kde/lib
+
+CFLAGS := $(CFLAGS) -I/home/leo/kde/include
 
 echo_client: echo_client.o
 	$(CXX) $(CFLAGS) $^ -o $@ $(LDFLAGS)

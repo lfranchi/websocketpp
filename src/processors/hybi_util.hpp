@@ -42,13 +42,13 @@ union masking_key_type {
 
 // extract a masking key into a value the size of a machine word. Machine word
 // size must be 4 or 8
-size_t prepare_masking_key(const masking_key_type& key);
+DLLEXPORT size_t prepare_masking_key(const masking_key_type& key);
 
 // circularly shifts the supplied prepared masking key by offset bytes
 // prepared_key must be the output of prepare_masking_key with the associated
 //    restrictions on the machine word size.
 // offset must be 0, 1, 2, or 3
-size_t circshift_prepared_key(size_t prepared_key, size_t offset);
+DLLEXPORT size_t circshift_prepared_key(size_t prepared_key, size_t offset);
 
 // basic byte by byte mask
 template <typename iter_type>
@@ -61,7 +61,7 @@ void byte_mask(iter_type b, iter_type e, const masking_key_type& key, size_t key
 }
 
 // exactly masks the bytes from start to end using key `key`
-void word_mask_exact(char* data,size_t length,const masking_key_type& key);
+DLLEXPORT void word_mask_exact(char* data,size_t length,const masking_key_type& key);
 
 } // namespace hybi_util
 } // namespace processor

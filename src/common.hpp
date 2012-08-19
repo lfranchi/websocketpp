@@ -52,6 +52,15 @@
 
 #include <boost/shared_ptr.hpp>
 
+#ifdef _WIN32
+  #define DLLEXPORT __declspec(dllexport)
+#elif __GNUC__ >= 4
+  #define DLLEXPORT __attribute__ ((visibility("default")))
+#else
+  #define DLLEXPORT
+#endif
+
+
 // Defaults
 namespace websocketpp {
     static const std::string USER_AGENT = "WebSocket++/0.2.0dev";

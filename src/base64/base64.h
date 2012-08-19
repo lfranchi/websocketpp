@@ -1,4 +1,5 @@
 #include <string>
+#include "../common.hpp"
 
-std::string base64_encode(unsigned char const* , unsigned int len);
-std::string base64_decode(std::string const& s);
+DLLEXPORT std::string base64_encode(unsigned char const* , unsigned int len);
+DLLEXPORT std::string base64_decode(std::string const& s);

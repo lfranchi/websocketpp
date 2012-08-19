@@ -36,7 +36,7 @@ namespace websocketpp {
 
 // WebSocket URI only (not http/etc) 
 
-class uri_exception : public std::exception {
+class DLLEXPORT uri_exception : public std::exception {
 public: 
     uri_exception(const std::string& msg) : m_msg(msg) {}
     ~uri_exception() throw() {}
@@ -52,7 +52,7 @@ private:
 static const uint16_t URI_DEFAULT_PORT = 80;
 static const uint16_t URI_DEFAULT_SECURE_PORT = 443;
 
-class uri {
+class DLLEXPORT uri {
 public:
     explicit uri(const std::string& uri);
     uri(bool secure, const std::string& host, uint16_t port, const std::string& resource);

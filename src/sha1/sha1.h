@@ -24,9 +24,11 @@
 #ifndef _SHA1_H_
 #define _SHA1_H_
 
+#include "../common.hpp"
+
 namespace websocketpp {
 
-class SHA1
+class DLLEXPORT SHA1
 {
     public:
 

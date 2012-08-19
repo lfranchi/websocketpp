@@ -28,6 +28,7 @@
 #ifndef WEBSOCKET_PROCESSOR_HYBI_HEADER_HPP
 #define WEBSOCKET_PROCESSOR_HYBI_HEADER_HPP
 
+#include "../common.hpp"
 #include "processor.hpp"
 
 namespace websocketpp {
@@ -54,7 +55,7 @@ namespace processor {
  * @e Distinct @e objects: Safe.@n
  * @e Shared @e objects: Unsafe
  */
-class hybi_header {
+class DLLEXPORT hybi_header {
 public:
     /// Construct a header processor and initialize for writing
     hybi_header();

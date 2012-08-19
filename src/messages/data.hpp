@@ -58,7 +58,7 @@ namespace message {
 // set_live()
 
 template <class element_type>
-    class pool : public boost::enable_shared_from_this< pool<element_type> >,
+   class DLLEXPORT pool : public boost::enable_shared_from_this< pool<element_type> >,
                  boost::noncopyable {
 public:
     typedef pool<element_type> type;
@@ -155,7 +155,7 @@ private:
     boost::mutex      m_lock;
 };
 
-class data {
+class DLLEXPORT data {
 public:
     typedef boost::intrusive_ptr<data> ptr;
     typedef pool<data>::ptr pool_ptr;

@@ -1,3 +1,14 @@
+This is a fork of WebSocket++ that adds a CMake buildsystem and a lightweight Qt
+wrapper. It is designed for embedding and using in a Qt application.
+
+Use WebSocketWrapper in qtwrapper/ in your Qt application to open a websocket
+connecting, send messages, and receive data from the message() signal.
+
+(c) 2012 Leo Franchi <lfranchi@kde.org>
+
+==
+
+
 WebSocket++ is a full featured C++/Boost ASIO implimentation of RFC6455, the 
 WebSocket protocol which can be used to build applications that feature 
 WebSocket client and server functionality.

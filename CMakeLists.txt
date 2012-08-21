@@ -1,7 +1,7 @@
 project(websocketpp)
 cmake_minimum_required(VERSION 2.6)
 
-find_package(Boost 1.42.0 REQUIRED COMPONENTS)
+find_package(Boost 1.42.0 REQUIRED COMPONENTS regex)
 
 set(WEBSOCKETPP_MAJOR_VERSION 0)
 set(WEBSOCKETPP_MINOR_VERSION 2)

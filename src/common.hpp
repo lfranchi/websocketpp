@@ -52,14 +52,8 @@
 
 #include <boost/shared_ptr.hpp>
 
-#ifdef _WIN32
-  #define DLLEXPORT __declspec(dllexport)
-#elif __GNUC__ >= 4
-  #define DLLEXPORT __attribute__ ((visibility("default")))
-#else
-  #define DLLEXPORT
-#endif
-
+// add correct macro when building a shared lib
+#define DLLEXPORT
 
 // Defaults
 namespace websocketpp {

@@ -31,6 +31,9 @@ set(websocketpp_HDRS base64/base64.h sha1/sha1.h md5/md5.hpp ${websocketpp_HDRS}
 add_library(websocketpp STATIC ${websocketpp_SRCS})
 set_target_properties(websocketpp PROPERTIES COMPILE_FLAGS -fPIC)
 target_link_libraries(websocketpp ${Boost_LIBRARIES})
+if(WIN32)
+    target_link_libraries(websocketpp ws2_32)
+endif()
 
 set_target_properties(websocketpp PROPERTIES VERSION ${WEBSOCKETPP_VERSION} SOVERSION ${WEBSOCKETPP_VERSION_SONAME} )
 
